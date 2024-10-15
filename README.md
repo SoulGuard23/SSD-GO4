@@ -1,2 +1,7 @@
 # SSD-GO4
-Secure Software Development Coursework Repository
+Members;
+Kaue Goncalves Ravagnani, RAV22525965
+*
+*
+*
+
