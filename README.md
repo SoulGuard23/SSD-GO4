@@ -9,7 +9,7 @@ Rodas Samson Gebrtensea GEB22527307
 
 *
 
-Case Stidies selected:
+Case Studies selected:
 
 NextSoft-
 
