@@ -30,14 +30,6 @@
             },
             "id": "209513f5-1976-494f-a926-0310957d1f7d",
             "zIndex": 0,
-            "source": {
-              "cell": "c577a735-25c7-4a7a-bdb7-71f8815698fa",
-              "port": "6c41a98d-460f-4df4-9121-58d07585fda9"
-            },
-            "target": {
-              "cell": "1efb6c7d-98c5-41a8-b3d0-2abec8e89041",
-              "port": "51ddf66e-0e99-4eda-9739-f09d4b260a72"
-            },
             "data": {
               "type": "tm.Flow",
               "name": "Data Flow",
@@ -50,6 +42,14 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": []
+            },
+            "source": {
+              "cell": "c577a735-25c7-4a7a-bdb7-71f8815698fa",
+              "port": "6c41a98d-460f-4df4-9121-58d07585fda9"
+            },
+            "target": {
+              "cell": "1efb6c7d-98c5-41a8-b3d0-2abec8e89041",
+              "port": "51ddf66e-0e99-4eda-9739-f09d4b260a72"
             }
           },
           {
@@ -73,6 +73,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -156,7 +157,6 @@
               ]
             },
             "id": "76fc3820-381d-4962-9e0a-15153edefde8",
-            "zIndex": 1,
             "data": {
               "type": "tm.Process",
               "name": "Authentication \nservices",
@@ -192,6 +192,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -275,7 +276,6 @@
               ]
             },
             "id": "8df96870-fe35-42f4-830a-f4697dd2306b",
-            "zIndex": 2,
             "data": {
               "type": "tm.Actor",
               "name": "User Acess Level",
@@ -736,6 +736,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -819,7 +820,6 @@
               ]
             },
             "id": "e0faabab-68c8-46c3-93f6-2935506d3b0e",
-            "zIndex": 11,
             "data": {
               "type": "tm.Actor",
               "name": "User Management \nModule",
@@ -852,6 +852,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 12,
             "ports": {
               "groups": {
                 "top": {
@@ -935,7 +936,6 @@
               ]
             },
             "id": "98a89028-8f6d-4d91-ad18-d01831419a61",
-            "zIndex": 12,
             "data": {
               "type": "tm.Actor",
               "name": "Data Monitoring\nModule",
@@ -968,6 +968,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -1051,7 +1052,6 @@
               ]
             },
             "id": "c577a735-25c7-4a7a-bdb7-71f8815698fa",
-            "zIndex": 13,
             "data": {
               "type": "tm.Process",
               "name": "Edge Gateway\nModule",
@@ -1080,16 +1080,19 @@
                 "text": "Cloud platform"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -1173,20 +1176,46 @@
               ]
             },
             "id": "1efb6c7d-98c5-41a8-b3d0-2abec8e89041",
-            "zIndex": 14,
             "data": {
               "type": "tm.Store",
               "name": "Cloud platform",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "4ea7f639-3421-482c-8a55-818321592bda",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Users that dont have the correct the clearance can easily gain access from using other people login or their computers ",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "6"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1213,6 +1242,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 15,
             "ports": {
               "groups": {
                 "top": {
@@ -1296,7 +1326,6 @@
               ]
             },
             "id": "484f7182-2f2e-40ac-8951-6ea340a21f91",
-            "zIndex": 15,
             "data": {
               "type": "tm.Store",
               "name": "Database",
@@ -1309,7 +1338,27 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "4ea7f639-3421-482c-8a55-818321592bda",
+                  "title": "New STRIDE threat",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Previously had the database as the central hub for the company however that posses a greater risk for data breaches",
+                  "mitigation": "To prevent this we have relocated the database from the center and only allowed the cloud management to have access which prevents data leaks and breaches ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "9"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1333,6 +1382,7 @@
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 16,
             "ports": {
               "groups": {
                 "top": {
@@ -1416,7 +1466,6 @@
               ]
             },
             "id": "8e04d98a-91f5-4d2e-b6f4-77002f947d70",
-            "zIndex": 16,
             "data": {
               "type": "tm.Actor",
               "name": "Secruity / Compliance\nMonitoring",
@@ -1425,7 +1474,11 @@
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [],
+              "threatFrequency": {
+                "spoofing": 0,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -1449,6 +1502,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 17,
             "ports": {
               "groups": {
                 "top": {
@@ -1532,7 +1586,6 @@
               ]
             },
             "id": "c174ad4b-5799-4e0a-a166-6937f469c1cd",
-            "zIndex": 17,
             "data": {
               "type": "tm.Process",
               "name": "Device Control and \nAutomation",
@@ -1573,6 +1626,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 18,
             "ports": {
               "groups": {
                 "top": {
@@ -1656,7 +1710,6 @@
               ]
             },
             "id": "8ebb276b-8f38-42ec-9ecf-927ccad18f15",
-            "zIndex": 18,
             "data": {
               "type": "tm.Store",
               "name": "Secure interactions ",
@@ -1690,13 +1743,6 @@
                 "informationDisclosure": 1,
                 "denialOfService": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           }
         ]
@@ -1704,6 +1750,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 1
+    "threatTop": 4
   }
 }
